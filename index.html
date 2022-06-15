@@ -6,14 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" integrity="sha512-wnea99uKIC3TJF7v4eKk4Y+lMz2Mklv18+r4na2Gn1abDRPPOeef95xTzdwGD9e6zXJBteMIhZ1+68QC5byJZw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./assets/style.css">
 </head>
 
 <body>
-    <header>
-        <h1>This is a test</h1>
-        <button id="generate">I am a button</button>    
+    <header id="headerContainer" class="container p-5 bg-gray-600 max-w-full text-center">
+        <h1 class="text-6xl font-bold">What's for Dinner?</h1>
     </header>
+    <div id="buttonContainer" class="text-center m-5">
+        <button id="generate" class="rounded-full bg-gray-600 p-2">I am a button</button>  
+    </div>
     <div class="grid grid-cols-12">
         <div class="col-span-2 bg-gray-600 m-3 py-5">
             <h2 class="text-center">Previous Generations</h2>
@@ -26,9 +28,29 @@
                 <li>Test</li>
             </ul>
         </div>
-        <div class="col-span-5 bg-gray-600 m-3">02</div>
-        <div class="col-span-5 bg-gray-600 m-3">03</div>
+        <div class="col-span-5 text-center bg-gray-600 m-3">
+            <!-- strMealThumb -->
+            <h3 class="text-4xl py-5">Food</h3>
+            <img src="" alt="" id="foodImage"> 
+            <p id="meal">strMeal</p>
+            <p id="culture">strArea</p>
+            <p id="category">strCategory</p>
+            <p id="recipe">strSource</p>
+        </div>
+        <div class="col-span-5 bg-gray-600 m-3">
+            <div class="col-span-5 text-center bg-gray-600 m-3">
+                <!-- strImageSource -->
+                <h3 class="text-4xl py-5">Drink</h3>
+                <img src="" alt="" id="drinkImage"> 
+                <p id="drink">strDrink</p>
+                <p id="drinkCategory">strCategory</p>
+                <p id="alcohol">strAlcoholic</p>
+                <ol class = "ingredientsList">
+                    <!-- Create list items here -->
+                </ol>
+            </div>
+        </div>
     </div>
-    <script src="./script.js"></script>
+    <script src="./assets/script.js"></script>
 </body>
 </html>
