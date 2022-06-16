@@ -73,12 +73,13 @@ function getDrink(){
         ingredients13.textContent = data.drinks[0].strMeasure13 + " " + data.drinks[0].strIngredient13
         // ingredients14.textContent = data.drinks[0].strMeasure14 + " " + data.drinks[0].strIngredient14
         // ingredients15.textContent = data.drinks[0].strMeasure15 + " " + data.drinks[0].strIngredient15
-        // for (let i = 0; i < ingredientsArray.length; i++) {
-        //     if (!ingredientsArray[i].text.includes("null")){
-        //         var valueOfLi = ingredientsArray[i].value
-        //         valueOfLi.classList.toggle("hide")
-        //     }    
-        // }
+        for (let i = 0; i < ingredientsArray.length; i++) {
+            if (!ingredientsArray[i].textContent.includes("null")){
+                ingredientsArray[i].classList.remove("hide")
+            }else{
+                ingredientsArray[i].classList.add("hide")
+            }
+        }
     });
 }
 
