@@ -4,6 +4,13 @@ var cultureEl = document.querySelector('#culture')
 var categoryEl = document.querySelector('#category')
 var recipeEl = document.querySelector('#recipe')
 var foodImageEl = document.querySelector('#foodImage')
+//Drinks
+var drinkImageEl = document.querySelector('#drinkImage')
+var drinkEl = document.querySelector('#drink')
+var drinkCategory = document.querySelector('#drinkCategory')
+var alcoholEl = document.querySelector('#alcohol')
+var ingredientsListEl = document.querySelector('#ingredientsList')
+
 
 function getFood(){
     var queryURL = 'https://www.themealdb.com/api/json/v1/1/random.php';
@@ -32,6 +39,11 @@ function getDrink(){
     })
     .then(function(data){
         console.log(data);
+        drinkEl.textContent = data.drinks[0].strDrink
+        drinkCategory.textContent = data.drinks[0].strCategory
+        alcoholEl.textContent = data.drinks[0].strAlcoholic
+        drinkImageEl.setAttribute("src",data.drinks[0].strDrinkThumb)
+
     });
 }
 
