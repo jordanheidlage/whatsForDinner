@@ -1,7 +1,25 @@
 .hide{
     display:none;
 }
+body{
+    background-color:#1e293b ;
+    color: white;
+}
 
+header{
+    background-image: linear-gradient(to bottom right, #0c4a6e, #374151)
+
+}
+.test{
+    border-radius: 15px;
+    background-image: linear-gradient(to bottom right, #0c4a6e, #374151
+    )
+
+}
+
+#generate{
+    background-image: linear-gradient(to bottom right, #60a5fa, #a1a1aa );
+}
 #headerText{
     color:white;
     font-family: Lobster;
