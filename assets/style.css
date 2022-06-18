@@ -10,7 +10,7 @@ header{
     background-image: linear-gradient(to bottom right, #0c4a6e, #374151)
 
 }
-.test{
+.boxStyle{
     border-radius: 15px;
     background-image: linear-gradient(to bottom right, #0c4a6e, #374151
     )
@@ -31,5 +31,4 @@ header{
     margin-right: auto;
     max-width: 60%;
     height: auto;
-    border-radius: 8px
-}
+    border-radius: 8px}
