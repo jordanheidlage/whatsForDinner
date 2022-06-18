@@ -35,8 +35,6 @@ var parsed4
 var parsed5
 var parsed6
 var parsedArray = [parsed1, parsed2, parsed3, parsed4, parsed5, parsed6]
-
-
 function populateHistory(){
     for (let i = 0; i < localArray.length; i++) {
         if (localArray[i] != undefined){
@@ -57,7 +55,6 @@ function populateHistory(){
         }
     }
 }
-
 function getFood(){
     var queryURL = 'https://www.themealdb.com/api/json/v1/1/random.php';
     fetch(queryURL)
@@ -88,7 +85,6 @@ function getFood(){
         foodImageEl.setAttribute("src", data.meals[0].strMealThumb)
     });
 }
-
 function getDrink(){
     var queryURL = 'https://www.thecocktaildb.com/api/json/v1/1/random.php';
     fetch(queryURL)
@@ -137,8 +133,6 @@ function getDrink(){
         }
     });
 }
-
 populateHistory()
-
 generateButtonEl.addEventListener("click", getFood)
 generateButtonEl.addEventListener("click", getDrink)
