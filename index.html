@@ -10,32 +10,30 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
-
 </head>
-
 <body>
     <header id="headerContainer" class="container p-5 bg-gray-600 max-w-full text-center">
         <h1  class="text-6xl font-bold" id="headerText">What's for Dinner?</h1>
     </header>
     <div id="buttonContainer" class="text-center m-5">
-        <button id="generate" class="rounded-full bg-gray-600 p-2">I am a button</button>  
+        <button id="generate" class="rounded-full bg-gray-600 p-2">I am a button</button>
     </div>
     <div class="grid grid-cols-12">
         <div class="col-span-2 bg-#0c4a6e m-3 py-5">
             <h2 class="text-center">Previous Generations</h2>
             <ul class="pl-5">
-                <li>Test</li>
-                <li>Test</li>
-                <li>Test</li>
-                <li>Test</li>
-                <li>Test</li>
-                <li>Test</li>
+                <li id="localLi1"></li>
+                <li id="localLi2"></li>
+                <li id="localLi3"></li>
+                <li id="localLi4"></li>
+                <li id="localLi5"></li>
+                <li id="localLi6"></li>
             </ul>
         </div>
         <div class="col-span-5 text-center bg-gray-600 m-3">
             <!-- strMealThumb -->
             <h3 class="text-4xl py-5">Food</h3>
-            <img src="" alt="" id="foodImage"> 
+            <img src="" alt="" class="Classimage" id="foodImage">
             <p id="meal"></p>
             <p id="culture"></p>
             <p id="category"></p>
@@ -45,7 +43,7 @@
             <div class="col-span-5 text-center bg-gray-600 m-3">
                 <!-- strImageSource -->
                 <h3 class="text-4xl py-5">Drink</h3>
-                <img src="" alt="" id="drinkImage"> 
+                <img src="" alt="" class="Classimage" id="drinkImage">
                 <p id="drink"></p>
                 <p id="drinkCategory"></p>
                 <p id="alcohol"></p>
