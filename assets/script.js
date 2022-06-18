@@ -25,7 +25,7 @@ var ingredients12 = document.querySelector('#twelve')
 var ingredients13 = document.querySelector('#thirteen')
 var ingredients14 = document.querySelector('#fourteem')
 var ingredients15 = document.querySelector('#fifteen')
-var ingredientsArray = [ingredients1, ingredients2, ingredients3, ingredients4, ingredients5, ingredients6, ingredients7, ingredients8, ingredients9, ingredients10, ingredients11, ingredients12, ingredients13, ingredients14, ingredients15]
+var ingredientsArray = [ingredients1, ingredients2, ingredients3, ingredients4, ingredients5, ingredients6, ingredients7, ingredients8, ingredients9, ingredients10, ingredients11, ingredients12, ingredients13]
 
 function getFood(){
     var queryURL = 'https://www.themealdb.com/api/json/v1/1/random.php';
@@ -71,8 +71,6 @@ function getDrink(){
         ingredients11.textContent = data.drinks[0].strMeasure11 + " " + data.drinks[0].strIngredient11
         ingredients12.textContent = data.drinks[0].strMeasure12 + " " + data.drinks[0].strIngredient12
         ingredients13.textContent = data.drinks[0].strMeasure13 + " " + data.drinks[0].strIngredient13
-        // ingredients14.textContent = data.drinks[0].strMeasure14 + " " + data.drinks[0].strIngredient14
-        // ingredients15.textContent = data.drinks[0].strMeasure15 + " " + data.drinks[0].strIngredient15
         for (let i = 0; i < ingredientsArray.length; i++) {
             if (!ingredientsArray[i].textContent.includes("null")){
                 ingredientsArray[i].classList.remove("hide")
