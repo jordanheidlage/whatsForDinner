@@ -33,3 +33,6 @@ header{
     height: auto;
     border-radius: 8px
 }
+.bevel {
+    border-radius: 8px
+}
