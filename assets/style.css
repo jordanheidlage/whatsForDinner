@@ -4,6 +4,7 @@
 body{
     background-color:#1e293b ;
     color: white;
+    line-height: 1.8 ;
     
 }
 
@@ -23,9 +24,24 @@ header{
     margin-right: auto;
     max-width: 60%;
     height: auto;
-    border-radius: 8px
+    border-radius: 8px;
+    padding-bottom: 20px;
 }
 
+.headerText{
+    color:white;
+    font-family: Lobster;
+    font-weight: 10;
+}
+
+.foodDrink{
+    margin-top: 0px;
+    padding-top: 0px;
+}
+
+#food{
+    padding-top: 10px;
+}
 #generate{
     background-image: linear-gradient(to bottom right, #60a5fa, #a1a1aa );
     
@@ -35,14 +51,17 @@ header{
     background-image: linear-gradient(to bottom right, #0c4a6e, #a1a1aa ) ;
 }
 
-.headerText{
-    color:white;
-    font-family: Lobster;
-    font-weight: 10;
+#generations{
+    font-size: 22px;
+    padding-bottom: 10px;
 }
 
 @media screen and (max-width: 768px) {
     .test {
       min-width: 100%;
       display: inline;
-    }}
+    }
+    #drinkName{
+        padding-top: 10px;
+    }
+}
