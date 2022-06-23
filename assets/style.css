@@ -1,6 +1,10 @@
+
+/* Hiding undefined js */
 .hide{
     display:none;
 }
+
+/* Gives background color for page and font color for site */
 body{
     background-color:#1e293b ;
     color: white;
@@ -8,16 +12,20 @@ body{
     
 }
 
+/* Gives background color for header */
 header{
     background-image: linear-gradient(to bottom right, #0c4a6e, #374151)
 
 }
+
+/* Gives background color and rounded corners to food, drink, and previous generations containers */
 .boxStyle{
     border-radius: 15px;
     background-image: linear-gradient(to bottom right, #0c4a6e, #374151
     );
 }
 
+/* Gives styling to images */
 .Classimage {
     display: block;
     margin-left: auto;
@@ -28,33 +36,41 @@ header{
     padding-bottom: 20px;
 }
 
+/* Styles header texts */
 .headerText{
     font-family: Lobster;
     font-weight: 10;
 }
 
+/* Fixes padding issue that was happening with food and drink tags */
 .foodDrink{
     margin-top: 0px;
     padding-top: 0px;
 }
 
+/* Fixes padding issue */
 #food{
     padding-top: 10px;
 }
+
+/* Adds coloring to button */
 #generate{
     background-image: linear-gradient(to bottom right, #60a5fa, #a1a1aa );
     
 }
 
+/* Adds color to button when hovering over button */
 #generate:hover{
     background-image: linear-gradient(to bottom right, #0c4a6e, #a1a1aa ) ;
 }
 
+/* Adds font style to previous generations tag */
 #generations{
     font-size: 22px;
     padding-bottom: 10px;
 }
 
+/* Makes website mobile friendly */
 @media screen and (max-width: 768px) {
     .media {
       min-width: 100%;
