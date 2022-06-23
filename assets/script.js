@@ -1,3 +1,4 @@
+// Food
 var generateButtonEl = document.querySelector('#generate')
 var mealEl = document.querySelector('#meal')
 var cultureEl = document.querySelector('#culture')
@@ -26,6 +27,7 @@ var ingredients13 = document.querySelector('#thirteen')
 var ingredients14 = document.querySelector('#fourteem')
 var ingredients15 = document.querySelector('#fifteen')
 var ingredientsArray = [ingredients1, ingredients2, ingredients3, ingredients4, ingredients5, ingredients6, ingredients7, ingredients8, ingredients9, ingredients10, ingredients11, ingredients12, ingredients13]
+// Local Storage
 var localLiArray = [document.querySelector('#localLi1'), document.querySelector('#localLi2'), document.querySelector('#localLi3'), document.querySelector('#localLi4'), document.querySelector('#localLi5'), document.querySelector('#localLi6')]
 var localArray = [localStorage.getItem("local1"), localStorage.getItem("local2"), localStorage.getItem("local3"), localStorage.getItem("local4"), localStorage.getItem("local5"), localStorage.getItem("local6")]
 var parsed1
@@ -35,11 +37,15 @@ var parsed4
 var parsed5
 var parsed6
 var parsedArray = [parsed1, parsed2, parsed3, parsed4, parsed5, parsed6]
+
+// Populates the "Previous Generations" category on the left
 function populateHistory(){
+    // For loop checks for any defined variables within the array. If undefined, then ignored
     for (let i = 0; i < localArray.length; i++) {
         if (localArray[i] != undefined){
             parsedArray[i] = JSON.parse(localArray[i])
         }
+        // If not undefined, populate text
         if (parsedArray[0] != null){
             localLiArray[0].textContent = parsedArray[0].meals[0].strMeal
         }if (parsedArray[1] != null){
@@ -55,13 +61,17 @@ function populateHistory(){
         }
     }
 }
+
+// Generates the food with the food API
 function getFood(){
+    // Fetches from food API link
     var queryURL = 'https://www.themealdb.com/api/json/v1/1/random.php';
     fetch(queryURL)
     .then(function(response){
         return response.json();
     })
     .then(function(data){
+        // Sets local storage for food (odd numbers)
         if(localStorage.getItem("local1") == null){
             localStorage.setItem("local1", JSON.stringify(data))
         }else if (localStorage.getItem("local3") == null){
@@ -73,26 +83,32 @@ function getFood(){
             localStorage.setItem("local3", localStorage.getItem("local1"))
             localStorage.setItem("local1", JSON.stringify(data))
         }
-        console.log(data);
-        mealEl.textContent = data.meals[0].strMeal
-        cultureEl.textContent = data.meals[0].strArea
-        categoryEl.textContent = data.meals[0].strCategory
+        // Populates the food section with text from data
+        mealEl.textContent = "Name: " + data.meals[0].strMeal
+        cultureEl.textContent = "Culture: " + data.meals[0].strArea
+        categoryEl.textContent = "Category: " + data.meals[0].strCategory
+        // Updates the display in the previous generations section
         localLiArray[4].textContent = localLiArray[2].textContent
         localLiArray[2].textContent = localLiArray[0].textContent
         localLiArray[0].textContent = data.meals[0].strMeal
+        // Sets the link text and href for recipe link
         recipeEl.textContent = "Link to recipe"
         recipeEl.setAttribute("href", data.meals[0].strSource)
+        // Sets the image
         foodImageEl.setAttribute("src", data.meals[0].strMealThumb)
     });
 }
+
+// Generates the drink with the drink API
 function getDrink(){
+    // Fetches from drinks API
     var queryURL = 'https://www.thecocktaildb.com/api/json/v1/1/random.php';
     fetch(queryURL)
     .then(function(response){
         return response.json();
     })
     .then(function(data){
-        console.log(data);
+        // Updates local storage for drinks (even numbers)
         if(localStorage.getItem("local2") == null){
             localStorage.setItem("local2", JSON.stringify(data))
         }else if (localStorage.getItem("local4") == null){
@@ -104,9 +120,10 @@ function getDrink(){
             localStorage.setItem("local4", localStorage.getItem("local2"))
             localStorage.setItem("local2", JSON.stringify(data))
         }
-        drinkEl.textContent = data.drinks[0].strDrink
-        drinkCategory.textContent = data.drinks[0].strCategory
-        alcoholEl.textContent = data.drinks[0].strAlcoholic
+        // Populates the drinks category
+        drinkEl.textContent = "Name: " + data.drinks[0].strDrink
+        drinkCategory.textContent = "Category: " + data.drinks[0].strCategory
+        alcoholEl.textContent = "Alcohol content: " + data.drinks[0].strAlcoholic
         drinkImageEl.setAttribute("src",data.drinks[0].strDrinkThumb)
         ingredients1.textContent = data.drinks[0].strMeasure1 + " " + data.drinks[0].strIngredient1
         ingredients2.textContent = data.drinks[0].strMeasure2 + " " + data.drinks[0].strIngredient2
@@ -124,6 +141,7 @@ function getDrink(){
         localLiArray[5].textContent = localLiArray[3].textContent
         localLiArray[3].textContent = localLiArray[1].textContent
         localLiArray[1].textContent = data.drinks[0].strDrink
+        // Hides any undefined ingredients and shows any defined ingredients
         for (let i = 0; i < ingredientsArray.length; i++) {
             if (!ingredientsArray[i].textContent.includes("null")){
                 ingredientsArray[i].classList.remove("hide")
@@ -133,6 +151,10 @@ function getDrink(){
         }
     });
 }
+
+// Calls the populate history function
 populateHistory()
+
+// Event listeners
 generateButtonEl.addEventListener("click", getFood)
 generateButtonEl.addEventListener("click", getDrink)
