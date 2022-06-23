@@ -24,7 +24,7 @@ header{
     margin-right: auto;
     max-width: 60%;
     height: auto;
-    border-radius: 8px;
+    border-radius: 8% 8% 8% 8%;
     padding-bottom: 20px;
 }
 
