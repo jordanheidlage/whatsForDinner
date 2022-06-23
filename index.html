@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>What's For Dinner</title>
+    <!-- API Links -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" integrity="sha512-wnea99uKIC3TJF7v4eKk4Y+lMz2Mklv18+r4na2Gn1abDRPPOeef95xTzdwGD9e6zXJBteMIhZ1+68QC5byJZw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./assets/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,17 +13,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Title Display -->
     <header id="headerContainer" class="container p-5 bg-gray-600 max-w-full text-center">
         <h1 id="dinner" class="text-6xl font-bold headerText">What's for Dinner?</h1>
     </header>
+    <!-- Button for Generator -->
     <div id="buttonContainer" class="text-center m-5">
         <button id="generate" class="rounded-full bg-gray-600 p-2">Generate</button>
     </div>
-
-   
-    <div class="m#edia grid grid-cols-12">
+    <!-- Previous Generations Column -->
+    <div class="media grid grid-cols-12">
         <div class="boxStyle col-span-2 bg-#0c4a6e m-3 py-5">
             <h2 id="generations" class="headerText text-center">Previous Generations</h2>
+            <!-- Populated by Javascript -->
             <ul class="pl-5">
                 <li id="localLi1"></li>
                 <li id="localLi2"></li>
@@ -32,24 +35,27 @@
                 <li id="localLi6"></li>
             </ul>
         </div>
+        <!-- Food Generations Column -->
         <div class="boxStyle col-span-5 text-center bg-gray-600 m-3">
-            <!-- strMealThumb -->
             <h3 id="food" class="headerText foodDrink text-4xl py-5">Food</h3>
+            <!-- Populated by Javascript -->
             <img src="" alt="" class="Classimage" id="foodImage">
             <p id="meal"></p>
             <p id="culture"></p>
             <p id="category"></p>
             <p><a class="bg-gray-600 m-3" href="" id="recipe"></a></p>
         </div>
+        <!-- Drink Generations Column -->
         <div class="boxStyle col-span-5 bg-gray-600 m-3">
             <div class="col-span-5 text-center m-3">
-                <!-- strImageSource -->
                 <h3 id="drinkName" class="headerText foodDrink text-4xl py-5">Drink</h3>
                 <img src="" alt="" class="Classimage" id="drinkImage">
+                <!-- Populated by Javascript -->
                 <p id="drink"></p>
                 <p id="drinkCategory"></p>
                 <p id="alcohol"></p>
                 <ol class = "ingredientsList">
+                    <!-- Hide will be dynamically added and removed by Javascript -->
                     <li class="hide" id="one"></li>
                     <li class="hide" id="two"></li>
                     <li class="hide" id="three"></li>
@@ -69,6 +75,7 @@
             </div>
         </div>
     </div>
+    <!-- The Javascript used -->
     <script src="./assets/script.js"></script>
 </body>
 </html>
